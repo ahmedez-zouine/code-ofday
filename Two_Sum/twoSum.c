@@ -26,20 +26,24 @@ int *towSum(int *nums, int numsSize, int target, int *returnSize)
   }
   return (NULL);
 }
+
 int main()
 {
-  //int *returnArray = (int *)malloc(sizeof(int) * 2);
   int size;
-  int array[4] ={3,4,5,6};
-  int *returnArray = towSum(array, 4, 5, &size);
+  int array[4] ={2,3,5,6};
+  int* returnArray = towSum(array, 4, 5, &size);
 
   int i = 0;
-/*
-  while (i < 2)
-  {
-    printf("%d\n", returnArray[i]);
-    i++;
-  }
-  */
-  printf("%d", size);
+ if (returnArray)
+ {
+    while (i < size)
+    {
+     printf("%d\n", returnArray[i]);
+     i++;
+    }
+    free(returnArray);
+ }
+  printf("%d\n", size);
+  return (0);
 }
+
